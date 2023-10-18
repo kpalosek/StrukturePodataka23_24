@@ -125,6 +125,9 @@
   <ItemGroup>
     <ClCompile Include="vjezba1.c" />
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="Student.txt" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
