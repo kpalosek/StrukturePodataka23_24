@@ -12,6 +12,8 @@ typedef struct _student {
 	double points;
 } Student;
 
+Student* AllocateMemoryAndReadStudents(int noRows);
+
 int main()
 {
 	int noRows = 0;
@@ -30,8 +32,22 @@ int main()
 		fgets(buffer, MAX_LINE, filePointer);
 		noRows++;
 	}
-	printf("%d", noRows);
+	//printf("%d", noRows);
+
+	Student* studenti;
+
+	studenti = (Student*)malloc(noRows * sizeof(Student));
+
+	if (!studenti) {
+		printf("Memory allocation failed.\n");
+		return NULL;
+	}
+
 	fclose(filePointer);
 
 	return 0;
+}
+
+Student* AllocateMemoryAndReadStudents(int noRows) {
+
 }
