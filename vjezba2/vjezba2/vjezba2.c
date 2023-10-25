@@ -20,6 +20,9 @@ int addToEndOfTheList(Position head);
 Position createPerson();
 Position findLast(Position firstEl);
 int printData(Position firstEl);
+Position findElement(Position firstEl);
+int deleteElement(Position firstEl);
+int printElement(Position element);
 
 
 int main()
@@ -34,9 +37,10 @@ int main()
 int mainMenu(Person head)
 {
 	char input = { 0 };
+	Position person = NULL;
 
 	while (1) {
-		printf("\n(1) Add to the Front\t(2) Add to the End\t(3) Print Data\t\t(4)Exit Program\n");
+		printf("\n(1) Add to the Front\t(2) Add to the End\t(3) Print Data\t(4) Find Element\t(5) Delete element\t\t(6)Exit Program\n");
 		do {
 			input = getchar(stdin);
 			getchar();
@@ -57,6 +61,14 @@ int mainMenu(Person head)
 				printData(head.Next);
 				break;
 			case '4':
+				person = findElement(head.Next);
+				if (person)
+					printElement(person);
+				break;
+			case '5':
+				deleteElement(&head);
+				break;
+			case '6':
 				return EXIT_SUCCESS;
 			default:
 				printf("Invalid input.\n");
@@ -166,4 +178,58 @@ int printData(Position firstEl)
 	free(current);
 
 	return EXIT_SUCCESS;
+}
+
+Position findElement(Position firstEl)
+{
+	char surname[MAX] = { 0 };
+	Position current = NULL;
+	current = firstEl;
+
+	if (!current) {
+		printf("List is empty.\n");
+		return NULL;
+	}
+
+	printf("Enter surname: ");
+	scanf("%s", surname);
+
+	while (current->Next) {
+		if (strcmp(surname, current->surname) == 0)
+			return current;
+		
+		current = current->Next;
+	}
+
+	printf("Person not found.\n");
+
+	return NULL;
+}
+
+int printElement(Position element)
+{
+	if (!element) {
+		printf("Element does not exist.\n");
+		return EXIT_FAILURE;
+	}
+
+	printf("\nName: %s\tSurname: %s\t\tBirth year: %d\n", element->name, element->surname, element->birthYear);
+
+	return EXIT_SUCCESS;
+}
+
+int deleteElement(Position firstEl)
+{
+	char surname[MAX] = { 0 };
+	Position current = NULL;
+	current = firstEl;
+
+	if (!current) {
+		printf("List is empty.\n");
+		return NULL;
+	}
+
+	printf("Enter surname: ");
+	scanf("%s", surname);
+
 }
