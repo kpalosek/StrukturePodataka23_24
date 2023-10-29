@@ -139,7 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="vjezba1.cpp" />
+    <ClCompile Include="vjezba1.c" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="Student.txt" />
