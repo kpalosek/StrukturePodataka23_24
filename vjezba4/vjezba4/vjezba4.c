@@ -21,12 +21,14 @@ int printData(Position firstEl);
 Position findPrevious(Position head, int coefficient, int exponent);
 int sumPolynomes(Position headPolySum, Position FirstPoly1, Position FirstPoly2);
 int deleteEmpty(Position current, Position headPoly);
+int multiplyPolynomes(Position headPolyMultiply, Position FirstPoly1, Position FirstPoly2);
 
 int main()
 {
 	Polynome headPoly1 = { .coefficient = 0, .exponent = 0, .next = NULL };
 	Polynome headPoly2 = { .coefficient = 0, .exponent = 0, .next = NULL };
 	Polynome headPolySum = { .coefficient = 0, .exponent = 0, .next = NULL };
+	Polynome headPolyMultiply = { .coefficient = 0, .exponent = 0, .next = NULL };
 
 	if (readFromFile(&headPoly1, &headPoly2) == 0) {
 		printf("Polynome 1:\n");
@@ -34,8 +36,14 @@ int main()
 		printf("Polynome 2:\n");
 		printData(headPoly2.next);
 		printf("Summed polynomes:\n");
+
 		sumPolynomes(&headPolySum, headPoly1.next, headPoly2.next);
 		printData(headPolySum.next);
+
+		if (multiplyPolynomes(&headPolyMultiply, headPoly1.next, headPoly2.next) == EXIT_SUCCESS) {
+			printf("Multyplied polinomes:\n");
+			printData(headPolyMultiply.next);
+		}
 	}
 
 	return EXIT_SUCCESS;
@@ -223,6 +231,28 @@ int sumPolynomes(Position headPolySum, Position FirstPoly1, Position FirstPoly2)
 	while (current) {
 		addToList(headPolySum, current->coefficient, current->exponent);
 		current = current->next;
+	}
+
+	return EXIT_SUCCESS;
+}
+
+int multiplyPolynomes(Position headPolyMultiply, Position FirstPoly1, Position FirstPoly2)
+{
+	Position currentMultiply = headPolyMultiply;
+	Position start = FirstPoly2;
+	Position currentPoly1 = FirstPoly1;
+	Position currentPoly2 = FirstPoly2;
+
+	if (currentPoly1 == NULL || currentPoly2 == NULL) {
+		printf("Can't multiply empty polinomes.\n");
+		return EXIT_FAILURE;
+	}
+
+	for (currentPoly1; currentPoly1 != NULL; currentPoly1 = currentPoly1->next) {
+		currentPoly2 = start;
+		for (currentPoly2; currentPoly2 != NULL; currentPoly2 = currentPoly2->next) {
+			addToList(currentMultiply, currentPoly1->coefficient * currentPoly2->coefficient, currentPoly1->exponent + currentPoly2->exponent);
+		}
 	}
 
 	return EXIT_SUCCESS;
