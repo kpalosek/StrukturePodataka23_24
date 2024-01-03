@@ -1,3 +1,3 @@
 ﻿  Source.c
-C:\Users\Toni\Desktop\FESB\2023_2024\Strukture podataka\StrukturePodataka23_24\vjezba7\vjezba7\Source.c(148): warning C4715: 'findElement': not all control paths return a value
+C:\Users\Toni\Desktop\FESB\2023_2024\Strukture podataka\StrukturePodataka23_24\vjezba7\vjezba7\Source.c(175): warning C4715: 'findElement': not all control paths return a value
   vjezba7.vcxproj -> C:\Users\Toni\Desktop\FESB\2023_2024\Strukture podataka\StrukturePodataka23_24\vjezba7\x64\Debug\vjezba7.exe
