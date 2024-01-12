@@ -1,0 +1,6 @@
+New York City,8500000
+Chicago,2300000
+Phoenix,1200000
+Los Angeles,3800000
+Denver,1100000
+Austin,950000

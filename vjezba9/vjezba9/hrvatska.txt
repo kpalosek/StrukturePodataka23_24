@@ -1,0 +1,6 @@
+Split,160000
+Osijek,95000
+Rijeka,105000
+Pula,55000
+Zagreb,650000
+Varazdin,25000

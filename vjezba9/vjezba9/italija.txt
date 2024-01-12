@@ -1,0 +1,6 @@
+Napulj,990000
+Firenza,430000
+Venecija,280000
+Rim,3100000
+Milan,1000000
+Torino,650000

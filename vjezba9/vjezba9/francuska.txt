@@ -1,0 +1,6 @@
+Lyon,430000
+Pariz,3700000
+Nantes,680000
+Strasbourg,300000
+Marseille,800000
+Toulouse,540000
