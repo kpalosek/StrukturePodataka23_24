@@ -1,0 +1,7 @@
+1984|Orwell|1949|1|0
+A Tale of Two Cities|Dickens|1859|1|1
+Animal Farm|Orwell|1945|2|1
+Fahrenheit 451|Bradbury|1953|4|3
+Great Expectations|Dickens|1860|2|1
+The Hobbit|Tolkien|1937|3|2
+The Lord of the Rings|Tolkien|1955|3|1
